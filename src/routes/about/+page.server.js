@@ -1,4 +1,4 @@
-import { RESEND_API } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 import { Resend } from "resend";
 
 export const actions = {
@@ -13,7 +13,7 @@ const sendEmail = async (data) => {
   // get the name from the form data
   const name = data.get("name");
   const msg = data.get("message");
-  const resend = new Resend(RESEND_API);
+  const resend = new Resend(env.RESEND_API_KEY);
   const { resp, error } = await resend.emails.send({
     to: "dave@dwedigital.com",
     from: "dave@email.dwedigital.com",
