@@ -1,9 +1,10 @@
 import { RESEND_API } from "$env/static/private";
 import { Resend } from "resend";
 
-// export const config = {
-//   runtime: "edge",
-// };
+// This is needed for Vercel to run functions
+export const config = {
+  runtime: "edge",
+};
 
 export const actions = {
   default: async ({ request }) => {
