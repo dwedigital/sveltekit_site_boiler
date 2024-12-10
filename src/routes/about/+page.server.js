@@ -18,6 +18,7 @@ const sendEmail = async (data) => {
   // get the name from the form data
   const name = data.get("name");
   const msg = data.get("message");
+  console.log("sending email");
   const resend = new Resend(RESEND_API);
   const { resp, error } = await resend.emails.send({
     to: "dave@dwedigital.com",
